@@ -11,7 +11,7 @@
 .hero-inner {
   width: 100%;
   max-width: 1140px;
-  padding: 100px 32px 60px;
+  padding: 0 32px;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;

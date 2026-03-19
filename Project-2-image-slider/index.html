@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wanderlux — Curated Travel Experiences</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════ NAVIGATION ═══════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">
+      <span class="nav__logo-mark">✦</span> Wanderlux
+    </div>
+    <ul class="nav__links">
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#why">About</a></li>
+      <li><a href="#testimonials">Stories</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="#packages" class="btn btn--nav">Plan Your Trip</a>
+    </div>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════════ HERO SLIDER ═══════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__slides">
+
+      <div class="hero__slide active" data-index="0">
+        <div class="hero__bg" style="background-image:url('assets/images/hero/slide1-switzerland.jpg')"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__glass">
+            <p class="hero__eyebrow">Switzerland · Alps</p>
+            <h1 class="hero__heading">Where Silence<br /><em>Speaks Loudest</em></h1>
+            <p class="hero__sub">Drift through pristine glaciers and emerald valleys where time slows to a mountain whisper.</p>
+            <div class="hero__actions">
+              <a href="#packages" class="btn btn--primary">Explore Switzerland</a>
+              <a href="#destinations" class="btn btn--ghost">View All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__slide" data-index="1">
+        <div class="hero__bg" style="background-image:url('assets/images/hero/slide2-thailand.jpg')"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__glass">
+            <p class="hero__eyebrow">Thailand · Phuket</p>
+            <h1 class="hero__heading">Turquoise Dreams<br /><em>& Warm Tides</em></h1>
+            <p class="hero__sub">Lose yourself in alabaster sands, temple incense, and sunsets that bleed orange into the sea.</p>
+            <div class="hero__actions">
+              <a href="#packages" class="btn btn--primary">Explore Thailand</a>
+              <a href="#destinations" class="btn btn--ghost">View All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__slide" data-index="2">
+        <div class="hero__bg" style="background-image:url('assets/images/hero/slide3-morocco.jpg')"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__glass">
+            <p class="hero__eyebrow">Morocco · Sahara</p>
+            <h1 class="hero__heading">Golden Dunes<br /><em>Infinite Stars</em></h1>
+            <p class="hero__sub">Sleep beneath a galaxy in handwoven tents where ancient trade routes still hum underfoot.</p>
+            <div class="hero__actions">
+              <a href="#packages" class="btn btn--primary">Explore Morocco</a>
+              <a href="#destinations" class="btn btn--ghost">View All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__slide" data-index="3">
+        <div class="hero__bg" style="background-image:url('assets/images/hero/slide4-norway.jpg')"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__glass">
+            <p class="hero__eyebrow">Norway · Fjords</p>
+            <h1 class="hero__heading">Edge of the<br /><em>World Awaits</em></h1>
+            <p class="hero__sub">Stand at glacial cliff edges where waterfalls cascade a thousand feet into mirror-still fjords.</p>
+            <div class="hero__actions">
+              <a href="#packages" class="btn btn--primary">Explore Norway</a>
+              <a href="#destinations" class="btn btn--ghost">View All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="hero__arrow hero__arrow--prev" id="prevBtn" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="hero__arrow hero__arrow--next" id="nextBtn" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <div class="hero__dots" id="heroDots">
+      <button class="hero__dot active" data-slide="0"></button>
+      <button class="hero__dot" data-slide="1"></button>
+      <button class="hero__dot" data-slide="2"></button>
+      <button class="hero__dot" data-slide="3"></button>
+    </div>
+
+    <div class="hero__progress"><div class="hero__progress-bar" id="progressBar"></div></div>
+
+    <div class="hero__scroll-hint">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ DESTINATIONS ═══════════════ -->
+  <section class="section destinations" id="destinations">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__label">Handpicked for You</p>
+        <h2 class="section__title">Popular <em>Destinations</em></h2>
+        <p class="section__desc">Forty-seven countries. One curated lens. We go further so you go better.</p>
+      </div>
+
+      <div class="destinations__grid">
+
+        <div class="dest-card dest-card--tall">
+          <div class="dest-card__img" style="background-image:url('assets/images/destinations/kyoto-japan.jpg')"></div>
+          <div class="dest-card__overlay"></div>
+          <div class="dest-card__body">
+            <span class="dest-card__tag">🌸 Asia</span>
+            <h3>Kyoto, Japan</h3>
+            <p>Temples, tea, and timeless grace</p>
+            <div class="dest-card__meta">
+              <span>From <strong>$1,240</strong></span>
+              <span>12 days</span>
+            </div>
+          </div>
+          <a href="#packages" class="dest-card__link" aria-label="Explore Kyoto"></a>
+        </div>
+
+        <div class="dest-card">
+          <div class="dest-card__img" style="background-image:url('assets/images/destinations/rome-italy.jpg')"></div>
+          <div class="dest-card__overlay"></div>
+          <div class="dest-card__body">
+            <span class="dest-card__tag">🏛️ Europe</span>
+            <h3>Rome, Italy</h3>
+            <p>Eternal beauty, eternal city</p>
+            <div class="dest-card__meta">
+              <span>From <strong>$980</strong></span>
+              <span>8 days</span>
+            </div>
+          </div>
+          <a href="#packages" class="dest-card__link" aria-label="Explore Rome"></a>
+        </div>
+
+        <div class="dest-card">
+          <div class="dest-card__img" style="background-image:url('assets/images/destinations/santorini-greece.jpg')"></div>
+          <div class="dest-card__overlay"></div>
+          <div class="dest-card__body">
+            <span class="dest-card__tag">☀️ Med</span>
+            <h3>Santorini, Greece</h3>
+            <p>Blue domes, white walls, magic</p>
+            <div class="dest-card__meta">
+              <span>From <strong>$1,560</strong></span>
+              <span>10 days</span>
+            </div>
+          </div>
+          <a href="#packages" class="dest-card__link" aria-label="Explore Santorini"></a>
+        </div>
+
+        <div class="dest-card">
+          <div class="dest-card__img" style="background-image:url('assets/images/destinations/bali-indonesia.jpg')"></div>
+          <div class="dest-card__overlay"></div>
+          <div class="dest-card__body">
+            <span class="dest-card__tag">🌊 Pacific</span>
+            <h3>Bali, Indonesia</h3>
+            <p>Soul food for the restless spirit</p>
+            <div class="dest-card__meta">
+              <span>From <strong>$870</strong></span>
+              <span>14 days</span>
+            </div>
+          </div>
+          <a href="#packages" class="dest-card__link" aria-label="Explore Bali"></a>
+        </div>
+
+        <div class="dest-card dest-card--wide">
+          <div class="dest-card__img" style="background-image:url('assets/images/destinations/patagonia-argentina.jpg')"></div>
+          <div class="dest-card__overlay"></div>
+          <div class="dest-card__body">
+            <span class="dest-card__tag">🏔️ Americas</span>
+            <h3>Patagonia, Argentina</h3>
+            <p>Raw. Wild. Unforgettable wilderness at the end of the earth.</p>
+            <div class="dest-card__meta">
+              <span>From <strong>$2,100</strong></span>
+              <span>16 days</span>
+            </div>
+          </div>
+          <a href="#packages" class="dest-card__link" aria-label="Explore Patagonia"></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PACKAGES ═══════════════ -->
+  <section class="section packages" id="packages">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__label">Designed Around You</p>
+        <h2 class="section__title">Travel <em>Packages</em></h2>
+        <p class="section__desc">Every detail handled. Every moment considered. You just bring yourself.</p>
+      </div>
+
+      <div class="packages__grid">
+
+        <div class="pkg-card">
+          <div class="pkg-card__badge">Most Popular</div>
+          <div class="pkg-card__header pkg-card__header--sky">
+            <div class="pkg-card__icon">🏝️</div>
+            <p class="pkg-card__name">Explorer</p>
+            <div class="pkg-card__price">
+              <span class="pkg-card__currency">$</span>
+              <span class="pkg-card__amount">1,290</span>
+              <span class="pkg-card__per">/person</span>
+            </div>
+            <p class="pkg-card__duration">7-night adventure</p>
+          </div>
+          <ul class="pkg-card__features">
+            <li>✦ Round-trip flights included</li>
+            <li>✦ 4-star boutique hotel</li>
+            <li>✦ Daily breakfast & dinner</li>
+            <li>✦ 3 guided excursions</li>
+            <li>✦ Airport transfers</li>
+            <li class="dimmed">✗ Private guide</li>
+            <li class="dimmed">✗ Lounge access</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary btn--full">Book Explorer</a>
+        </div>
+
+        <div class="pkg-card pkg-card--featured">
+          <div class="pkg-card__badge pkg-card__badge--gold">✦ Premium</div>
+          <div class="pkg-card__header pkg-card__header--sunset">
+            <div class="pkg-card__icon">🌿</div>
+            <p class="pkg-card__name">Luminary</p>
+            <div class="pkg-card__price">
+              <span class="pkg-card__currency">$</span>
+              <span class="pkg-card__amount">2,890</span>
+              <span class="pkg-card__per">/person</span>
+            </div>
+            <p class="pkg-card__duration">12-night luxury</p>
+          </div>
+          <ul class="pkg-card__features">
+            <li>✦ Business class flights</li>
+            <li>✦ 5-star resort & villa</li>
+            <li>✦ All meals + mini bar</li>
+            <li>✦ 6 curated experiences</li>
+            <li>✦ Private airport transfers</li>
+            <li>✦ Dedicated local guide</li>
+            <li class="dimmed">✗ Lounge access</li>
+          </ul>
+          <a href="#contact" class="btn btn--gold btn--full">Book Luminary</a>
+        </div>
+
+        <div class="pkg-card">
+          <div class="pkg-card__badge pkg-card__badge--obsidian">Ultra</div>
+          <div class="pkg-card__header pkg-card__header--obsidian">
+            <div class="pkg-card__icon">✈️</div>
+            <p class="pkg-card__name">Sovereign</p>
+            <div class="pkg-card__price">
+              <span class="pkg-card__currency">$</span>
+              <span class="pkg-card__amount">5,490</span>
+              <span class="pkg-card__per">/person</span>
+            </div>
+            <p class="pkg-card__duration">21-night bespoke</p>
+          </div>
+          <ul class="pkg-card__features">
+            <li>✦ First class + private jets</li>
+            <li>✦ Ultra-luxury properties</li>
+            <li>✦ Private chef & spa</li>
+            <li>✦ Unlimited experiences</li>
+            <li>✦ Helicopter transfers</li>
+            <li>✦ 24/7 concierge service</li>
+            <li>✦ VIP lounge access</li>
+          </ul>
+          <a href="#contact" class="btn btn--dark btn--full">Book Sovereign</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ WHY CHOOSE US ═══════════════ -->
+  <section class="section why" id="why">
+    <div class="why__bg-shape"></div>
+    <div class="container">
+      <div class="section__header">
+        <p class="section__label">The Wanderlux Difference</p>
+        <h2 class="section__title">Why Discerning Travelers<br /><em>Choose Us</em></h2>
+      </div>
+
+      <div class="why__grid">
+        <div class="why-card">
+          <div class="why-card__icon">🗺️</div>
+          <h3>Insider Routes</h3>
+          <p>Our local experts map paths no guidebook dares to print — hidden villages, secret viewpoints, private access.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">🛡️</div>
+          <h3>Zero Surprises</h3>
+          <p>Transparent pricing. Flexible cancellations. 24/7 on-ground support. Travel with your shoulders finally down.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">🌱</div>
+          <h3>Conscious Travel</h3>
+          <p>Carbon-offset itineraries, locally-owned stays, and authentic community experiences that give back.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">✨</div>
+          <h3>Bespoke Design</h3>
+          <p>No copy-paste itineraries. Every journey is sculpted around your rhythm, passions, and pace.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">🏆</div>
+          <h3>Award-Winning</h3>
+          <p>Condé Nast Traveler Top Agency 2024. Voted #1 for personalised luxury travel five years running.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">📞</div>
+          <h3>Always There</h3>
+          <p>A human being — not a chatbot — picks up every call, at any hour, from anywhere on earth.</p>
+        </div>
+      </div>
+
+      <div class="why__stats">
+        <div class="stat">
+          <span class="stat__num" data-target="47">0</span><span class="stat__unit">+</span>
+          <p>Countries</p>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-target="12400">0</span><span class="stat__unit">+</span>
+          <p>Happy Travelers</p>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-target="98">0</span><span class="stat__unit">%</span>
+          <p>Satisfaction</p>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-target="15">0</span><span class="stat__unit">yr</span>
+          <p>Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__label">Voices from the Road</p>
+        <h2 class="section__title">Their <em>Stories</em></h2>
+      </div>
+
+      <div class="testimonials__track-wrap">
+        <div class="testimonials__track" id="testiTrack">
+
+          <div class="testi-card">
+            <div class="testi-card__stars">★★★★★</div>
+            <p class="testi-card__quote">"Wanderlux planned our honeymoon in Iceland and genuinely exceeded every expectation. They booked us a private aurora viewing spot no tourist knows about. Life-changing."</p>
+            <div class="testi-card__author">
+              <img src="assets/images/avatars/avatar1.jpg" alt="Sarah M." loading="lazy" />
+              <div>
+                <strong>Sarah & Marcus</strong>
+                <span>Reykjavik Honeymoon</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-card__stars">★★★★★</div>
+            <p class="testi-card__quote">"As a solo female traveler, I was nervous. My guide spoke four languages and made every moment feel safe and spontaneous. I'm already booking trip number three."</p>
+            <div class="testi-card__author">
+              <img src="assets/images/avatars/avatar2.jpg" alt="Priya K." loading="lazy" />
+              <div>
+                <strong>Priya K.</strong>
+                <span>Solo Southeast Asia</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-card__stars">★★★★★</div>
+            <p class="testi-card__quote">"We brought four kids aged 6–14 across Japan for three weeks. Every day was perfectly paced — museums, ramen-making, bullet trains. Not one meltdown. Miracle workers."</p>
+            <div class="testi-card__author">
+              <img src="assets/images/avatars/avatar3.jpg" alt="Tom L." loading="lazy" />
+              <div>
+                <strong>The Lawson Family</strong>
+                <span>Family Japan Circuit</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-card__stars">★★★★★</div>
+            <p class="testi-card__quote">"I've used three luxury travel agencies. Wanderlux is the only one where I felt heard rather than processed. The Sovereign package in Morocco was pure poetry."</p>
+            <div class="testi-card__author">
+              <img src="assets/images/avatars/avatar4.jpg" alt="James R." loading="lazy" />
+              <div>
+                <strong>James R.</strong>
+                <span>Sovereign Morocco</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-card__stars">★★★★★</div>
+            <p class="testi-card__quote">"The Patagonia trek was brutal, beautiful, and life-affirming. Our guide Camila knew every plant and every star. I cried at the glacier. Worth every single cent."</p>
+            <div class="testi-card__author">
+              <img src="assets/images/avatars/avatar5.jpg" alt="Elena V." loading="lazy" />
+              <div>
+                <strong>Elena V.</strong>
+                <span>Patagonia Expedition</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="testimonials__nav">
+        <button class="testi-btn" id="testiPrev" aria-label="Previous testimonial">←</button>
+        <div class="testi-dots" id="testiDots">
+          <button class="testi-dot active"></button>
+          <button class="testi-dot"></button>
+          <button class="testi-dot"></button>
+          <button class="testi-dot"></button>
+          <button class="testi-dot"></button>
+        </div>
+        <button class="testi-btn" id="testiNext" aria-label="Next testimonial">→</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact__wrap">
+
+        <div class="contact__info">
+          <p class="section__label">Start Planning</p>
+          <h2 class="section__title" style="text-align:left">Let's Build Your<br /><em>Perfect Journey</em></h2>
+          <p class="contact__desc">Tell us your dream. We'll make it real — down to the last sunset, meal, and moment of wonder.</p>
+
+          <div class="contact__details">
+            <div class="contact__detail">
+              <span class="contact__detail-icon">📍</span>
+              <div>
+                <strong>Visit Us</strong>
+                <span>12 Voyager Lane, London EC2Y 5AS</span>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <span class="contact__detail-icon">📞</span>
+              <div>
+                <strong>Call Us</strong>
+                <span>+44 20 7946 0312</span>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <span class="contact__detail-icon">✉️</span>
+              <div>
+                <strong>Email</strong>
+                <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="761e131a1a19360117181213041a030e581519">[email&#160;protected]</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__socials">
+            <a href="#" aria-label="Instagram" class="social-link">𝕀𝕘</a>
+            <a href="#" aria-label="Pinterest" class="social-link">𝕻𝖙</a>
+            <a href="#" aria-label="YouTube" class="social-link">𝕐𝕥</a>
+            <a href="#" aria-label="TikTok" class="social-link">𝕋𝕜</a>
+          </div>
+        </div>
+
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="Eleanor" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" placeholder="Whitmore" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="destination">Dream Destination</label>
+              <select id="destination" name="destination">
+                <option value="">Select a region…</option>
+                <option>Europe</option>
+                <option>Asia</option>
+                <option>Americas</option>
+                <option>Africa & Middle East</option>
+                <option>Oceania</option>
+                <option>Surprise Me!</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">Package Interest</label>
+              <select id="budget" name="budget">
+                <option value="">Select package…</option>
+                <option>Explorer — $1,290</option>
+                <option>Luminary — $2,890</option>
+                <option>Sovereign — $5,490</option>
+                <option>Fully Custom</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us Your Vision</label>
+            <textarea id="message" name="message" rows="4" placeholder="Describe your dream trip — we handle the rest…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full btn--submit">
+            <span class="btn__text">Send My Enquiry</span>
+            <span class="btn__icon">→</span>
+          </button>
+          <div class="form__success" id="formSuccess">
+            ✦ We've received your enquiry! Our travel curator will be in touch within 24 hours.
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+
+          <div class="footer__brand">
+            <div class="footer__logo">
+              <span class="nav__logo-mark">✦</span> Wanderlux
+            </div>
+            <p>Crafting journeys that reshape how you see yourself and the world. Travel isn't escape — it's arrival.</p>
+            <div class="footer__awards">
+              <span>🏆 Condé Nast 2024</span>
+              <span>✦ Luxury Travel Guild</span>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <h4>Destinations</h4>
+            <ul>
+              <li><a href="#">Europe & Med</a></li>
+              <li><a href="#">Southeast Asia</a></li>
+              <li><a href="#">The Americas</a></li>
+              <li><a href="#">Africa & Safari</a></li>
+              <li><a href="#">Middle East</a></li>
+              <li><a href="#">Polar & Extreme</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Meet the Team</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Press & Awards</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Partner With Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Cancellation Policy</a></li>
+              <li><a href="#">Travel Insurance</a></li>
+              <li><a href="#">Visa Guidance</a></li>
+              <li><a href="#">Health & Safety</a></li>
+              <li><a href="#">Emergency Contacts</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h4>Stay Inspired</h4>
+            <p style="font-size:0.85rem;margin-bottom:1rem;color:var(--text-muted)">Monthly dispatches of hidden places, travel stories, and exclusive offers.</p>
+            <form class="footer__newsletter" id="newsletterForm">
+              <input type="email" placeholder="Your email…" />
+              <button type="submit" aria-label="Subscribe">→</button>
+            </form>
+            <div class="footer__socials">
+              <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+              </a>
+              <a href="#" aria-label="Pinterest">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.19-.77 1.27-5.38 1.27-5.38s-.32-.65-.32-1.61c0-1.51.88-2.64 1.97-2.64.93 0 1.38.7 1.38 1.53 0 .94-.6 2.34-.91 3.63-.26 1.08.54 1.96 1.6 1.96 1.92 0 3.21-2.46 3.21-5.37 0-2.21-1.49-3.76-3.62-3.76-2.47 0-3.92 1.85-3.92 3.76 0 .74.28 1.54.64 1.97a.26.26 0 0 1 .06.25c-.07.27-.22.86-.25.98-.04.16-.13.19-.3.12-1.13-.52-1.83-2.17-1.83-3.49 0-2.84 2.06-5.45 5.94-5.45 3.12 0 5.55 2.22 5.55 5.19 0 3.1-1.95 5.59-4.66 5.59-.91 0-1.77-.47-2.06-1.03l-.56 2.1c-.2.78-.75 1.76-1.12 2.36.85.26 1.74.4 2.67.4 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42A2.78 2.78 0 0 0 20.6 4.47C18.88 4 12 4 12 4s-6.88 0-8.6.47A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.53C5.12 20 12 20 12 20s6.88 0 8.6-.47a2.78 2.78 0 0 0 1.94-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2025 Wanderlux Ltd. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Preferences</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
